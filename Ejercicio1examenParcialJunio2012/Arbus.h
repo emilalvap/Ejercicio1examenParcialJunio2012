@@ -75,32 +75,30 @@ public:
     // MI FUNCIîN
     int siguienteClave(const Clave &clave) {
         
-        Clave clavesMayores[20];
-        int k = -1;
-        bool encontrada = false;
+        Clave claveI = _ra->_clave;
         
-        return siguienteClave(clave, clavesMayores, k, _ra, encontrada);
+        return siguienteClave(clave, claveI, _ra);
     }
     
-    int siguienteClave(const Clave &claveConocida, Clave clavesMayores[], int &k, Nodo *act, bool &encontrada) {
-            
-            while ( !encontrada ) {
-                
-                if ( act->_clave < claveConocida) {
-                    siguienteClave(claveConocida, clavesMayores, k, act->_dr, encontrada);
-                }
-                else if (act->_clave > claveConocida ) {
-                    k++;
-                    clavesMayores[k] = act->_clave;
-                    
-                    siguienteClave(claveConocida, clavesMayores, k, act->_iz, encontrada);
-                }
-                else {
-                    encontrada = true;
-                }
-            }
+    int siguienteClave(const Clave &claveConocida, Clave &clave, Nodo *act) {
         
-        return ( k > -1 ) ? clavesMayores[k] : claveConocida;
+        if ( act != NULL ) {
+            
+            if ( act->_clave > claveConocida && act->_clave <= clave ) {
+                
+                clave = siguienteClave(claveConocida, act->_clave, act->_iz);
+            }
+            else if ( act->_clave < claveConocida && act->_clave > clave ) {
+                
+                clave = siguienteClave(claveConocida, act->_clave, act->_dr);
+            }
+            else {
+                
+                clave = siguienteClave(claveConocida, act->_clave, act->_dr);
+            }
+        }
+        
+        return clave;
     }
     
 	/** Constructor; operacion ArbolVacio */
