@@ -80,6 +80,12 @@ public:
         return siguienteClave(clave, claveI, _ra);
     }
     
+    int siguienteClaveConMaximoIgual(const Clave &clave) {
+        Clave claveI = buscaMayor(clave, _ra);
+        
+        return siguienteClave2(clave, claveI, _ra);
+    }
+    
     int siguienteClave(const Clave &claveConocida, Clave &clave, Nodo *act) {
         
         if ( act != NULL ) {
@@ -99,6 +105,29 @@ public:
     
     int siguienteClave2(const Clave &claveConocida, Clave &clave, Nodo *act) {
         
+        
+        if ( act != NULL ) {
+            
+            if ( act->_clave > claveConocida && act->_clave <= clave ) {
+                
+                clave = siguienteClave(claveConocida, act->_clave, act->_iz);
+            }
+            else if ( act->_clave <= claveConocida && act->_clave < clave ) {
+                
+                clave = siguienteClave(claveConocida, clave, act->_dr);
+            }
+        }
+        
+        return clave;
+    }
+    
+    int buscaMayor(const Clave &clave, Nodo *act) {
+        
+        if ( act != NULL) {
+            
+			if(clave <= act->_clave) return act ->_clave;
+			else return buscaMayor(clave, act->_dr);
+        }
     }
     
 	/** Constructor; operacion ArbolVacio */
