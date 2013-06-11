@@ -7,12 +7,33 @@
 //
 
 #include <iostream>
+#include "Cola.h"
+#include "Arbus.h"
+
+using namespace std;
+
+int siguienteClave(int clave, Arbus<int, int> arbol) {
+    
+    return arbol.siguienteClave(clave);
+}
 
 int main(int argc, const char * argv[])
 {
 
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    Arbus<int, int> arbol;
+    
+    arbol.inserta(8, 1);
+    arbol.inserta(10, 1);
+    arbol.inserta(9, 1);
+    arbol.inserta(11, 1);
+    arbol.inserta(6, 1);
+    arbol.inserta(7, 1);
+    arbol.inserta(5, 1);
+    
+    int clave = 7;
+    
+    cout << "Siguente clave a " << clave << " : " << siguienteClave(clave, arbol);
+    
     return 0;
 }
 

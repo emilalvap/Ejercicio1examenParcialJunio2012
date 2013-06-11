@@ -28,6 +28,12 @@
 		FB51DB951767598E000934A1 /* Ejercicio1examenParcialJunio2012 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Ejercicio1examenParcialJunio2012; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB51DB981767598E000934A1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		FB51DB9A1767598E000934A1 /* Ejercicio1examenParcialJunio2012.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = Ejercicio1examenParcialJunio2012.1; sourceTree = "<group>"; };
+		FB51DBA1176759AA000934A1 /* Cola.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cola.h; sourceTree = "<group>"; };
+		FB51DBA2176759AA000934A1 /* DCola.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCola.h; sourceTree = "<group>"; };
+		FB51DBA3176759AA000934A1 /* Excepciones.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Excepciones.h; sourceTree = "<group>"; };
+		FB51DBA417675A82000934A1 /* Arbus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Arbus.h; sourceTree = "<group>"; };
+		FB51DBA517675C24000934A1 /* Lista.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lista.h; sourceTree = "<group>"; };
+		FB51DBA617675C24000934A1 /* Pila.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pila.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,12 @@
 		FB51DB971767598E000934A1 /* Ejercicio1examenParcialJunio2012 */ = {
 			isa = PBXGroup;
 			children = (
+				FB51DBA517675C24000934A1 /* Lista.h */,
+				FB51DBA617675C24000934A1 /* Pila.h */,
+				FB51DBA417675A82000934A1 /* Arbus.h */,
+				FB51DBA1176759AA000934A1 /* Cola.h */,
+				FB51DBA2176759AA000934A1 /* DCola.h */,
+				FB51DBA3176759AA000934A1 /* Excepciones.h */,
 				FB51DB981767598E000934A1 /* main.cpp */,
 				FB51DB9A1767598E000934A1 /* Ejercicio1examenParcialJunio2012.1 */,
 			);
