@@ -75,7 +75,7 @@ public:
     // MI FUNCIîN
     int siguienteClave(const Clave &clave) {
         
-        Clave claveI = _ra->_clave;
+        Clave claveI = NULL;
         
         return siguienteClave(clave, claveI, _ra);
     }
@@ -84,21 +84,21 @@ public:
         
         if ( act != NULL ) {
             
-            if ( act->_clave > claveConocida && act->_clave <= clave ) {
+            if ( act->_clave > claveConocida && ((clave == NULL) || (act->_clave <= clave)) ) {
                 
                 clave = siguienteClave(claveConocida, act->_clave, act->_iz);
             }
-            else if ( act->_clave < claveConocida && act->_clave > clave ) {
+            else if ( act->_clave <= claveConocida && ((clave == NULL) ||(act->_clave < clave)) ) {
                 
-                clave = siguienteClave(claveConocida, act->_clave, act->_dr);
-            }
-            else {
-                
-                clave = siguienteClave(claveConocida, act->_clave, act->_dr);
+                clave = siguienteClave(claveConocida, clave, act->_dr);
             }
         }
         
         return clave;
+    }
+    
+    int siguienteClave2(const Clave &claveConocida, Clave &clave, Nodo *act) {
+        
     }
     
 	/** Constructor; operacion ArbolVacio */

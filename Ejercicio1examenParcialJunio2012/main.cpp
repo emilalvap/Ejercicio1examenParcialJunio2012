@@ -31,7 +31,7 @@ int main(int argc, const char * argv[])
     arbol.inserta(7, 1);
     arbol.inserta(4, 1);
     
-    int clave = 10;
+    int clave = 11;
     
     cout << "Siguente clave a " << clave << " : " << siguienteClave(clave, arbol);
     
