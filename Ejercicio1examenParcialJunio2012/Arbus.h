@@ -83,10 +83,6 @@ public:
     }
     
     int siguienteClave(const Clave &claveConocida, Clave clavesMayores[], int &k, Nodo *act, bool &encontrada) {
-        
-        if ( !encontrada ) {
-            
-//            encontrada = claveConocida != act->_clave;
             
             while ( !encontrada ) {
                 
@@ -103,7 +99,6 @@ public:
                     encontrada = true;
                 }
             }
-        }
         
         return ( k > -1 ) ? clavesMayores[k] : claveConocida;
     }
